@@ -1,77 +1,62 @@
+const posts = [
+    {
+        "user": "meowed",
+        "useravatar": 'img/meowed.svg',
+        "content": 'img/gato-telefone.svg',
+        "userlikes": "respondeai",
+        "numberlikes": "101.523",
+        "likesavatar": 'img/respondeai.svg',
+    },
+    {
+        "user": "barked",
+        "useravatar": 'img/barked.svg',
+        "content": 'img/dog.svg',
+        "userlikes": "adorable_animals",
+        "numberlikes": "99.159",
+        "likesavatar": 'img/adorable_animals.svg',
+    }
+]
+
 export default function Posts() {
     return (
         <div class="posts">
-          <div class="post">
-            <div class="topo">
-              <div class="usuario">
-                <img src="img/meowed.svg" />
-                meowed
-              </div>
-              <div class="acoes">
-                <ion-icon name="ellipsis-horizontal"></ion-icon>
-              </div>
-            </div>
-
-            <div class="conteudo">
-              <img src="img/gato-telefone.svg" />
-            </div>
-
-            <div class="fundo">
-              <div class="acoes">
-                <div>
-                  <ion-icon name="heart-outline"></ion-icon>
-                  <ion-icon name="chatbubble-outline"></ion-icon>
-                  <ion-icon name="paper-plane-outline"></ion-icon>
-                </div>
-                <div>
-                  <ion-icon name="bookmark-outline"></ion-icon>
-                </div>
-              </div>
-
-              <div class="curtidas">
-                <img src="img/respondeai.svg" />
-                <div class="texto">
-                  Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="post">
-            <div class="topo">
-              <div class="usuario">
-                <img src="img/barked.svg" />
-                barked
-              </div>
-              <div class="acoes">
-                <ion-icon name="ellipsis-horizontal"></ion-icon>
-              </div>
-            </div>
-
-            <div class="conteudo">
-              <img src="img/dog.svg" />
-            </div>
-
-            <div class="fundo">
-              <div class="acoes">
-                <div>
-                  <ion-icon name="heart-outline"></ion-icon>
-                  <ion-icon name="chatbubble-outline"></ion-icon>
-                  <ion-icon name="paper-plane-outline"></ion-icon>
-                </div>
-                <div>
-                  <ion-icon name="bookmark-outline"></ion-icon>
-                </div>
-              </div>
-
-              <div class="curtidas">
-                <img src="img/adorable_animals.svg" />
-                <div class="texto">
-                  Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-                </div>
-              </div>
-            </div>
-          </div>
+            {posts.map((p) =>
+                          <div class="post">
+                          <div class="topo">
+                            <div class="usuario">
+                              <img src={p.useravatar} />
+                              {p.user}
+                            </div>
+                            <div class="acoes">
+                              <ion-icon name="ellipsis-horizontal"></ion-icon>
+                            </div>
+                          </div>
+              
+                          <div class="conteudo">
+                            <img src={p.content} />
+                          </div>
+              
+                          <div class="fundo">
+                            <div class="acoes">
+                              <div>
+                                <ion-icon name="heart-outline"></ion-icon>
+                                <ion-icon name="chatbubble-outline"></ion-icon>
+                                <ion-icon name="paper-plane-outline"></ion-icon>
+                              </div>
+                              <div>
+                                <ion-icon name="bookmark-outline"></ion-icon>
+                              </div>
+                            </div>
+              
+                            <div class="curtidas">
+                              <img src={p.likesavatar} />
+                              <div class="texto">
+                                Curtido por <strong>{p.userlikes}</strong> e <strong>outras {p.numberlikes} pessoas</strong>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                )}
         </div>
     )
 }
