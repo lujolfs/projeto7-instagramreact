@@ -1,15 +1,4 @@
-import ReactDOM from "react-dom";
-import Navbar from './Navbar';
-import Corpo from './Corpo';
+import ReactDOM from 'react-dom';
+import Instagram from './Instagram';
 
-function Instagram() {
-    return (
-        <div>
-            <Navbar />
-            <Corpo />
-        </div>
-    )
-}
-
-const app = Instagram();
-ReactDOM.render(app, document.querySelector(".root"));
+ReactDOM.render(<Instagram />, document.querySelector(".root"));
